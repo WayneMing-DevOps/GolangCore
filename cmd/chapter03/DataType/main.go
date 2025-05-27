@@ -85,10 +85,21 @@ func type_string() {
 	fmt.Println(str)
 }
 
+// 基本数据类型默认值
+func type_DefaultValue() {
+	var a int     // 0
+	var b float32 // 0
+	var c float64 // 0
+	var d bool    // false
+	var e string  // ""
+	fmt.Println(a, b, c, d, e)
+}
+
 func main() {
 	type_int()
 	type_float()
 	type_char()
 	type_bool()
 	type_string()
+	type_DefaultValue()
 }
