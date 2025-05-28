@@ -5,8 +5,8 @@ package main
 
 import (
 	"fmt"
-	"unsafe"
 	"strconv"
+	"unsafe"
 )
 
 // 基本数据类型转换string
@@ -16,11 +16,11 @@ func conversion_String() {
 	// var b bool = true
 	// var myChar byte = 'A'
 	var str1 string
-	
+
 	// 方式一：使用fmt.Sprintf()函数
 	str1 = fmt.Sprintf("%d", num1)
 	fmt.Printf("str1 的数据类型:%T,占用的字节数:%d\n", str1, unsafe.Sizeof(str1))
-	
+
 	// 方式二：使用strconv.Format函数
 	str1 = strconv.FormatInt(int64(num1), 10)
 	fmt.Printf("str1 的数据类型:%T,占用的字节数:%d\n", str1, unsafe.Sizeof(str1))
@@ -32,7 +32,7 @@ func stringConversionBase() {
 	var n1 int64
 	n1, _ = strconv.ParseInt(str, 10, 64)
 	fmt.Printf("n1 的数据类型:%T,占用的字节数:%d\n", n1, unsafe.Sizeof(n1))
-	
+
 }
 
 func main() {
