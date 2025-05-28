@@ -3,7 +3,37 @@
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unsafe"
+	"strconv"
+)
+
+// 基本数据类型转换string
+func conversion_String() {
+	var num1 int = 99
+	// var num2 float64 = 11.11
+	// var b bool = true
+	// var myChar byte = 'A'
+	var str1 string
+	
+	// 方式一：使用fmt.Sprintf()函数
+	str1 = fmt.Sprintf("%d", num1)
+	fmt.Printf("str1 的数据类型:%T,占用的字节数:%d\n", str1, unsafe.Sizeof(str1))
+	
+	// 方式二：使用strconv.Format函数
+	str1 = strconv.FormatInt(int64(num1), 10)
+	fmt.Printf("str1 的数据类型:%T,占用的字节数:%d\n", str1, unsafe.Sizeof(str1))
+}
+
+// string转换基本数据类型
+func stringConversionBase() {
+	var str string = "12345678"
+	var n1 int64
+	n1, _ = strconv.ParseInt(str, 10, 64)
+	fmt.Printf("n1 的数据类型:%T,占用的字节数:%d\n", n1, unsafe.Sizeof(n1))
+	
+}
 
 func main() {
 	var i int32 = 100
@@ -20,4 +50,6 @@ func main() {
 	// n6 = n4 + 20	// 错误，不允许这么计算，在go中必须转换！
 	fmt.Println(n4, n5, n6)
 
+	conversion_String()
+	stringConversionBase()
 }
