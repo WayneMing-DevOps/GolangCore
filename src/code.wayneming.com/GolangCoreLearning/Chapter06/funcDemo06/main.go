@@ -14,7 +14,7 @@ func sum(n1 int, n2 int) int {
 }
 
 func main() {
-
+	// test
 	res := sum(10, 20)
 	fmt.Println("res:", res)
 }
