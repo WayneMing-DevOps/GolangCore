@@ -1,9 +1,12 @@
 package main
 
 import (
-	"GolangCore/src/code.wayneming.com/GolangCoreLearning/Chapter06/demo"
+	"GolangCore/src/code.wayneming.com/GolangCoreLearning/Chapter06/funcDemo05"
+	"fmt"
 )
 
 func main() {
-	demo.Demo01(5)
+	funcDemo05.Demo01(5)
+	res := funcDemo05.Demo02(4)
+	fmt.Print("res:", res)
 }
