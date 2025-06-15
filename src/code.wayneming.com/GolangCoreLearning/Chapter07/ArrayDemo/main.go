@@ -96,11 +96,29 @@ func ArrayDemo06() {
 	}
 }
 
+// ArrayExercise1 创建一个byte类型的26个元素的数组，分别放置'A'-'Z',使用for循环访问所有元素并打印出来。提示：字符数据运算'A'+1='B'
+func ArrayExercise1() {
+	var byteArray [26]byte
+	byteArray[0] = 'A'
+	for i := 1; i < len(byteArray); i++ {
+		// 方式一
+		// byteArray[i] = byteArray[i-1] + 1
+
+		// 方式二
+		byteArray[i] = 'A' + byte(i)
+	}
+
+	for i, v := range byteArray {
+		fmt.Printf("byteArray[%d]: %c\n", i, v)
+	}
+}
+
 func main() {
 	//ArrayDemo01()
 	//ArrayDemo02()
 	//ArrayDemo03()
 	//ArrayDemo04()
 	//ArrayDemo05()
-	ArrayDemo06()
+	//ArrayDemo06()
+	ArrayExercise1()
 }
