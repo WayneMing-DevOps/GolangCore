@@ -113,6 +113,21 @@ func ArrayExercise1() {
 	}
 }
 
+// ArrayExercise2 请求出一个数组的最大值，并得到对应的下标。
+func ArrayExercise2() {
+	var intArrayTest = [6]int{50, 11, 23, 45, 12, 111}
+
+	var maxIndex int = 0
+	var maxValue int = intArrayTest[0]
+	for i, v := range intArrayTest {
+		if v > maxValue {
+			maxIndex, maxValue = i, v
+		}
+	}
+	fmt.Println(intArrayTest)
+	fmt.Printf("MaxIndex: %d, MaxValue: %d", maxIndex, maxValue)
+}
+
 func main() {
 	//ArrayDemo01()
 	//ArrayDemo02()
@@ -120,5 +135,6 @@ func main() {
 	//ArrayDemo04()
 	//ArrayDemo05()
 	//ArrayDemo06()
-	ArrayExercise1()
+	//ArrayExercise1()
+	ArrayExercise2()
 }
