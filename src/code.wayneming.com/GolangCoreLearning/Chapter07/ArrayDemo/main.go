@@ -44,6 +44,7 @@ func ArrayDemo03() {
 		&intArr, &intArr[0], &intArr[1], &intArr[2])
 }
 
+// ArrayDemo04 初识数组
 func ArrayDemo04() {
 	var score [5]float64
 
@@ -57,6 +58,7 @@ func ArrayDemo04() {
 	}
 }
 
+// ArrayDemo05 数组初始化4种方式
 func ArrayDemo05() {
 	var numArr01 [3]int = [3]int{1, 2, 3}
 	fmt.Println("numArr01:", numArr01)
@@ -71,10 +73,34 @@ func ArrayDemo05() {
 	fmt.Println("strArr05:", strArr05)
 }
 
+// ArrayDemo06 数组遍历
+func ArrayDemo06() {
+	strArr05 := [...]string{1: "tom", 0: "jack", 2: "mary"}
+
+	// 方式一
+	for i := 0; i < len(strArr05); i++ {
+		fmt.Printf("index: %v, value: %v\n", i, strArr05[i])
+		fmt.Printf("strArr05[%d]: %v\n", i, strArr05[i])
+	}
+
+	// 方式二
+	for index, value := range strArr05 {
+		fmt.Printf("index: %v, value: %v\n", index, value)
+		fmt.Printf("strArr05[%d]: %v\n", index, value)
+	}
+
+	var i int = 0
+	for _, value := range strArr05 {
+		fmt.Printf("strArr05[%d]: %v\n", i, value)
+		i++
+	}
+}
+
 func main() {
-	ArrayDemo01()
-	ArrayDemo02()
-	ArrayDemo03()
+	//ArrayDemo01()
+	//ArrayDemo02()
+	//ArrayDemo03()
 	//ArrayDemo04()
-	ArrayDemo05()
+	//ArrayDemo05()
+	ArrayDemo06()
 }
